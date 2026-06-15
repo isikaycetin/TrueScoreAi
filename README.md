@@ -14,6 +14,19 @@ Projenin kalbini, özenle oluşturulmuş veri setimiz ve gelişmiş dil modelimi
 
 **Model Seçimi ve Transfer Learning:** Başlangıçta sınıflandırma görevini geleneksel makine öğrenmesi (ML) algoritmalarıyla (Random Forest, SVM vb.) eğittik; ancak bu modellerle ulaştığımız başarı oranı %90 seviyelerinde sınırlı kaldı. Dilin karmaşık yapısını ve bağlamını çok daha iyi yakalayabilmek için Transfer Learning (Transfer Öğrenme) yaklaşımına geçiş yaptık. Bu aşamada BERTurk, XLM-RoBERTa ve Electra gibi önceden eğitilmiş güçlü dil modellerini kıyasladık. Yapılan performans testleri sonucunda, e-ticaret terminolojisini anlamada %95 - %96 ile en yüksek doğruluk oranını ve kararlılığı sağlayan Electra mimarisinde karar kıldık. Bu geçiş sayesinde, kullanıcı niyetini doğru analiz etme başarımız maksimize edilmiştir.
 
+### 📝 Veri Etiketleme Örnekleri
+
+Modelin eğitim sürecinde kullanılan veri seti, yorumun ürünün kendisine mi yoksa dış faktörlere mi ait olduğuna göre titizlikle etiketlenmiştir. Aşağıda bu mantığı gösteren birkaç örnek yer almaktadır:
+
+| Müşteri Yorumu | Gerçek Kategori | Sistem Etiketi | Puan Hesaplaması |
+| :--- | :--- | :--- | :--- |
+| *"Telefonun kamerası ve şarj süresi muazzam, tam bir fiyat performans ürünü."* | Ürün Özelliği | **Alakalı** | Puanı Etkiler |
+| *"Kargo 5 gün gecikti, ayrıca paket tamamen ezilmiş halde geldi."* | Lojistik ve Paketleme | **Alakasız** | Hesaba Katılmaz |
+| *"Kumaşın dokusu çok sert ve dikişleri ilk yıkamada söküldü, tavsiye etmem."* | Ürün Kalitesi | **Alakalı** | Puanı Etkiler |
+| *"Satıcı soruma çok hızlı cevap verdi ve içine hediye koymuş, teşekkürler."* | Satıcı İletişimi | **Alakasız** | Hesaba Katılmaz |
+| *"Cok uyguna geldi tesekkurler hepsiburda ekibii"* | Satıcı İletişimi | **Alakasız** | Hesaba Katılmaz |
+| *"Babama almıştım hiç kulllanmadı"* | Tüktetici kaynaklı kişisel durum | **Alakasız** | Hesaba Katılmaz |
+
 
 ## 🛠️ Teknolojiler ve Araçlar
 **Yapay Zeka & NLP:** Electra Modeli, Transfer Learning
