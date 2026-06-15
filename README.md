@@ -1,6 +1,6 @@
 # TrueScoreAI: E-Ticaret Yorumları İçin NLP Tabanlı Şeffaf Puanlama Sistemi
 
-E-ticaret platformlarındaki müşteri yorumlarını analiz ederek; kargo, lojistik veya satıcı kaynaklı sorunları filtreleyen ve sadece gerçek ürün kalitesini yansıtan şeffaf bir skor-puan üreten yapay zeka mimarisi.
+E-ticaret platformlarındaki müşteri yorumlarını analiz ederek; kargo, lojistik,tüketici kaynaklı anlamsız yorumlar veya satıcı kaynaklı sorunları filtreleyen ve sadece gerçek ürün kalitesini yansıtan şeffaf bir skor-puan üreten yapay zeka mimarisi.
 
 ## 🚨 Problem & 🛠️ Çözüm
 **Problem:** Tüketiciler, e-ticaret platformlarında ürün araştırırken genellikle ürünün kendisiyle ilgisi olmayan (kargo gecikmesi, paketin ezilmesi ,satıcı kaynaklı sorunlar vb.) veya sahte olan yorumlar nedeniyle yanıltılmaktadır. Bu durum, kaliteli ürünlerin puanını haksız yere düşürmekte ve müşterinin doğru ürünü seçmesini zorlaştırmaktadır.
@@ -40,10 +40,8 @@ Modelin eğitim sürecinde kullanılan veri seti, yorumun ürünün kendisine mi
 ## ⚙️ Sistem Çalışma Mantığı ve API
 TrueScoreAI, sadece teorik bir makine öğrenmesi modeli değil, uçtan uca çalışabilen bir web uygulamasıdır. Backend mimarisi FastAPI ile geliştirilmiş olup, lokal ortamda Uvicorn üzerinden hızlı ve kararlı bir şekilde hizmet vermektedir.
 
-(Sistemin kurumsal standartlarda tasarlanmış API dokümantasyonu - Swagger UI)
-
 ## 📊 Model Performansı ve Metrikler
-Uyguladığımız Transfer Learning ve titiz etiketleme süreçleri sonucunda modelimiz, ürünle ilgili gerçek yorumları ve alakasız kargo şikayetlerini yüksek doğrulukla ayırt etmektedir.
+Uyguladığımız Transfer Learning ve titiz etiketleme süreçleri sonucunda modelimiz, ürünle ilgili gerçek yorumları ve alakasız kargo şikayetlerini yüksek doğrulukla ayırt etmektedir. Modellerin metrik sonuçları dosya ekindedir(Model_sonuçları_metrikleri).
 
 (Modelin kesinlik (precision), duyarlılık (recall) ve F1-Score metriklerini gösteren performans analizi)
 
